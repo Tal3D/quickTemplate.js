@@ -15,7 +15,7 @@ Templating is done by enclosing a variable name in **{ and }** without spaces. q
 ```html
 <html>
   <head>
-    <title>{my_website_title}</title>
+    <title>My website</title>
   </head>
   <body>
     <header>{heading}</header>
@@ -28,7 +28,6 @@ Templating is done by enclosing a variable name in **{ and }** without spaces. q
 #####The info:
 ```javascript
 var info = {
-  "my_website_title": "Awesome <a>Website</a>",
   "heading": "A cool place",
   "content": "This is my personal website...",
   "footer": "Copyright"
@@ -39,7 +38,7 @@ var info = {
 ```html
 <html>
   <head>
-    <title>Awesome <a>Website</a></title>
+    <title>My Website</title>
   </head>
   <body>
     <header>A cool place</header>
