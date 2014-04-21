@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{quickTemplate.js}</title>
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+            body {
+                margin: 0;
+                padding: 0;
+                font-size: 15px;
+                line-height: 1.5;
+                font-family: sans-serif;
+            }
+            header, section, footer {
+                width: 500px;
+                margin: 0 auto;
+                padding: 20px 0;
+                position: relative;
+            }
+            a:link, a:hover, a:visited {
+                color: inherit;
+                text-decoration: none;
+            }
+            header h1 {
+                margin-bottom: 10px;
+            }
+            .downloadbox {
+                position: absolute;
+                top: 41px;
+                right: 0;
+            }
+            .downloadbox a {
+                text-align: center;
+                color: white;
+                text-shadow: rgba(0,0,0,0.4) 0px 1px 0px;
+                float: left;
+                background-color: rgba(0,0,0,0.3);
+                width: 60px;
+                padding: 10px;
+                border-left: 1px solid rgba(255,255,255,0.5);
+                border-right: 1px solid rgba(0,0,0,0.2);
+                border-bottom: 1px solid rgba(0,0,0,0.2);
+            }
+            .downloadbox a:first-child {
+                border-radius: 6px 0px 0px 6px;
+            }
+            .downloadbox a:last-child {
+                border-right: none;
+                border-radius: 0px 6px 6px 0px;
+            }
+            button {
+                cursor: pointer;
+            }
+        </style>
+        <script src="quickTemplate.js"></script>
+        <script>
+            var info = {
+                "title": "quickTemplate.js",
+                "owner": "Tal",
+                "content": "quickTemplate.js is a super simple super lightweight templating engine. It's inspired by projects like handlebars and mustache and aims to make templating even easier.",
+                "description": "Super simple super lightweight templating engine.",
+                "zip": "http://www.github.com/Tal3D/quickTemplate.js/zipball/master",
+                "tar": "http://www.github.com/Tal3D/quickTemplate.js/tarball/master",
+                "repo": "http://www.github.com/Tal3D/quickTemplate.js"
+            }
+            render()
+        </script>
+    </head>
+    <body>
+        <header>
+            <h1>{title}</h1>
+            <div class="downloadbox">
+                <a href="{zip}"><div>.zip</div></a>
+                <a href="{tar}"><div>.tar</div></a>
+                <a href="{repo}"><div>github</div></a>
+            </div>
+            <small>{description}</small>
+        </header>
+        <section>
+            <p style="background-color: rgba(0,0,0,0.3); color: white; padding: 10px;">
+                Click to render the template: <button onclick="render()" style="border: none; border-top: 1px solid rgba(255,255,255,0.4); padding: 6px;">Render</button>
+            </p>
+            <p>{content}</p>
+        </section>
+        <footer>Repo maintained by {owner}.</footer>
+    </body>
+</html>
