@@ -5,13 +5,17 @@ quickTemplate.js is a super simple super lightweight templating engine. It´s in
 
 ##Quick Start
 
-All you need is a javascript object called **info** where you store all your info.
+quickTemplate.js will render an object into a string and return the processed string.
+
+```javascript
+render("My name is {name}.", {"name": "Tal"}); // --> "My name is Tal."
+```
 
 ###Templating
 
-Templating is done by enclosing a variable name in **{ and }** without spaces. quickTemplate.js will check your info object for a corresponding property. For example info.name (in your js) will correspond with {name} (in your html). The whole item will then be replaced. To parse the document simply call **render()**.
+Templating is done by enclosing a variable name in **{ and }** without spaces. quickTemplate.js will check your info object for a corresponding property. For example {"name": "Tal"} (in your js) will correspond with {name} (in your html).
 
-#####The template:
+#####The template *(html)*:
 ```html
 <html>
   <head>
@@ -25,7 +29,7 @@ Templating is done by enclosing a variable name in **{ and }** without spaces. q
 </html>
 ```
 
-#####The info:
+#####The info object *(javascript)*:
 ```javascript
 var info = {
   "heading": "A cool place",
@@ -34,7 +38,7 @@ var info = {
 }
 ```
 
-#####The parsed document:
+#####The parsed document *(html)*:
 ```html
 <html>
   <head>
@@ -50,4 +54,9 @@ var info = {
 
 ###Rendering
 
-Simply call **render()** to render your document.
+To render your whole document do:
+
+```javascript
+var info = {};
+document.body.innerHTML = render(document.body.innerHTML, info);
+```
