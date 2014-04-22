@@ -7,14 +7,15 @@
 function render(target, source){
     var regEx = /\{\S+\}/g;
     var vars = target.match(regEx);
+    var targetString = target;
     for(var i = 0; i < vars.length; i++){
         var input = eval("source." + vars[i].substr(1, vars[i].length - 2));
         if(input){
-            target = target.replace(vars[i], input);
+            targetString = targetString.replace(vars[i], input);
         }
         else{
-            target = target.replace(vars[i], "");
+            targetString = targetString.replace(vars[i], "");
         }
     }
-    return target;
+    return targetString;
 }
