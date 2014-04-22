@@ -31,7 +31,7 @@ Templating is done by enclosing a variable name in **{ and }** without spaces. q
 
 #####The info object *(javascript)*:
 ```javascript
-var info = {
+{
   "heading": "A cool place",
   "content": "This is my personal website...",
   "footer": "Copyright"
@@ -57,6 +57,5 @@ var info = {
 To render your whole document do:
 
 ```javascript
-var info = {};
-document.body.innerHTML = render(document.body.innerHTML, info);
+document.body.innerHTML = render(document.body.innerHTML, {});
 ```
