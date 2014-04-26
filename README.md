@@ -19,7 +19,7 @@ Templating is done by enclosing a variable name in **{ and }** without spaces. q
 ```html
 <html>
   <head>
-    <title>My website</title>
+    <title>My Website</title>
   </head>
   <body>
     <header>{heading}</header>
