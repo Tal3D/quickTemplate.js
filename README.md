@@ -8,7 +8,7 @@ quickTemplate.js is a super simple super lightweight templating engine. It´s in
 quickTemplate.js will render an object's contents onto a string and return the processed string.
 
 ```javascript
-render("My name is {name}.", {"name": "Tal"}); // --> "My name is Tal."
+render("My name is {name}.", {name: "Tal"}); // --> "My name is Tal."
 ```
 
 ###Templating
@@ -32,9 +32,9 @@ Templating is done by enclosing a variable name in **{ and }** without spaces. q
 #####The info object *(javascript)*:
 ```javascript
 {
-  "heading": "A cool place",
-  "content": "This is my personal website...",
-  "footer": "Copyright"
+  heading: "A cool place",
+  content: "This is my personal website...",
+  footer: "Copyright"
 }
 ```
 
