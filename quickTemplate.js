@@ -4,16 +4,17 @@
  * @param   {Object}    source    The source object whose information will be rendered into the target string.
  * @return  {String}    Returns the rendered string.
  */
-function render(target, source){
-    var regEx = /\{\S+\}/g;
-    var vars = target.match(regEx);
-    var targetString = target;
-    for(var i = 0; i < vars.length; i++){
-        var input = eval("source." + vars[i].substr(1, vars[i].length - 2));
-        if(input){
+function render(target, source) {
+	"use strict";
+    var regEx = /\{\w+\}/g,
+		vars = target.match(regEx),
+		targetString = target;
+    for (var i in vars) {
+        var input = source[vars[i].substr(1, vars[i].length - 2)];
+        if (input) {
             targetString = targetString.replace(vars[i], input);
         }
-        else{
+		else {
             targetString = targetString.replace(vars[i], "");
         }
     }

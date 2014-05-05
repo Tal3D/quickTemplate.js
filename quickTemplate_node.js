@@ -1,0 +1,2 @@
+function render(a,b){"use strict";var c=/\{\w+\}/g,d=a.match(c),e=a;for(var f in d){var g=b[d[f].substr(1,d[f].length-2)];e=g?e.replace(d[f],g):e.replace(d[f],"")}return e}
+module.exports.render = render;
