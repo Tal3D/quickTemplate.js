@@ -6,17 +6,23 @@
  */
 function render(target, source) {
 	"use strict";
-    var regEx = /\{\w+\}/g,
+	var regEx = /\{[a-zA-Z0-9.]+\}/g,
 		vars = target.match(regEx),
 		targetString = target;
-    for (var i in vars) {
-        var input = source[vars[i].substr(1, vars[i].length - 2)];
-        if (input) {
-            targetString = targetString.replace(vars[i], input);
-        }
+	for (var i in vars) {
+		var variable = vars[i].substr(1, vars[i].length - 2);
+		var subvars = variable.match(/[a-zA-Z0-9]+/g);
+		var input = source[subvars[0]];
+		for(var j = 1; j < subvars.length; j++)
+		{
+			input = input[subvars[j]];
+		}
+		if (input) {
+			targetString = targetString.replace(vars[i], input);
+		}
 		else {
-            targetString = targetString.replace(vars[i], "");
-        }
-    }
-    return targetString;
+			targetString = targetString.replace(vars[i], "");
+		}
+	}
+	return targetString;
 }
