@@ -6,7 +6,7 @@
  */
 function render(target, source) {
 	"use strict";
-	var regEx = /\{[a-zA-Z0-9.]+\}/g,
+	var regEx = /\{[a-zA-Z0-9]+(\.[a-zA-Z0-9]+)*\}/g,
 		vars = target.match(regEx),
 		targetString = target;
 	for (var i in vars) {

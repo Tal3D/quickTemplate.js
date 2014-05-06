@@ -1,2 +1,2 @@
-function render(a,b){"use strict";var c=/\{[a-zA-Z0-9.]+\}/g,d=a.match(c),e=a;for(var f in d){for(var g=d[f].substr(1,d[f].length-2),h=g.match(/[a-zA-Z0-9]+/g),i=b[h[0]],j=1;j<h.length;j++)i=i[h[j]];e=i?e.replace(d[f],i):e.replace(d[f],"")}return e}
+function render(a,b){"use strict";var c=/\{[a-zA-Z0-9]+(\.[a-zA-Z0-9]+)*\}/g,d=a.match(c),e=a;for(var f in d){for(var g=d[f].substr(1,d[f].length-2),h=g.match(/[a-zA-Z0-9]+/g),i=b[h[0]],j=1;j<h.length;j++)i=i[h[j]];e=i?e.replace(d[f],i):e.replace(d[f],"")}return e}
 module.exports.render = render;
